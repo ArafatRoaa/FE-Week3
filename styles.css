@@ -17,6 +17,15 @@ body {
     border-radius: 5px 5px 0px 0px;
 }
 
+#imgSection {
+    height: 450px;
+}
+
+#imgDetailsDiv {
+    max-width: 600px; 
+    min-height: 260px;
+}
+
 #img {
     object-fit: cover; 
     border-radius: 5px 5px 0px 0px;
