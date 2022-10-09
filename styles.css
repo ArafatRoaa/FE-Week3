@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap');
+
+body {
+    font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.semiBold {
+    font-weight: 600;
+}
+
+#aCard {
+    border-radius: 5px; 
+    height: 360px;
+}
+
+#imgDiv {
+    border-radius: 5px 5px 0px 0px;
+}
+
+#img {
+    object-fit: cover; 
+    border-radius: 5px 5px 0px 0px;
+}
+
+#textDiv {
+    border-radius: 0px 0px 5px 5px;
+}
+
+.bodyDark {
+    background-color: #202c37;
+}
+
+.elementsDark {
+    background-color: #2b3945;
+    color: white;
+}
+
+.textDark {
+    color: white;
+}
+
+.icon {
+    color: white;
+}

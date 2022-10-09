@@ -5,249 +5,248 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week2 - Bootstrap</title>
+    <title>Week3</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body class="m-0 p-0 pb-5 bg-light">
-    <header class="container-fluid align-items-center py-4 px-sm-5 d-flex justify-content-between shadow-sm bg-white">
+<body class="m-0 p-0 pb-5 bg-light" id="body">
+    <header class="container-fluid align-items-center py-4 px-sm-5 d-flex justify-content-between shadow-sm bg-white themedBg">
         <h1 class="fs-5 fw-bold p-0 m-0">Where in the world?</h1>
-        <button type="button" class="btn btn-xs text-nowrap p-0">
-            <i class="bi bi-moon"></i>
-            <span class="fs-6 fw-normal text-end">Dark Mode</span>
+        <button type="button" class="btn btn-xs text-nowrap p-0" onclick="toggleTheme()">
+            <i class="bi bi-moon" id="icon"></i>
+            <span class="fs-6 fw-normal text-end text-dark themedText">Dark Mode</span>
         </button>
     </header>
     <div class="container-fluid m-0 px-sm-5">
         <div class="row justify-content-between mt-4 mt-lg-5 mx-0">
             <div class="col-lg-4 p-0">
-                <div class="d-flex position-relative shadow-sm mb-5 mb-lg-0">
-                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary"></i>
-                    <input type="text" class="form-control form-control-lg fs-6 border-0 py-3 px-5"
+                <div class="d-flex position-relative shadow-sm mb-5 mb-lg-0 bg-white themedBg">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary iconSearch"></i>
+                    <input id="search" type="text" class="form-control form-control-lg fs-6 border-0 py-3 px-5 bg-transparent text-dark themedText"
                         placeholder="Search for a country...">
                 </div>
             </div>
             <div class="col-7 col-lg-2 p-0 shadow-sm">
-                <div class="btn-group w-100">
-                    <button class="btn btn-lg dropdown-toggle fs-6 py-3 px-2" data-bs-toggle="dropdown" aria-expanded="false">
-                        Filter by Region
+                <div class="btn-group bg-white w-100 rounded-3 themedBg">
+                    <button class="btn btn-lg dropdown-toggle py-3 px-2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="fs-6 p-0 m-0 text-dark themedText">Filter by Region</span>
                     </button>
-                    <ul class="dropdown-menu shadow-sm w-100 mt-lg-1 border-0">
-                      <li><a class="dropdown-item" href="#">Africa</a></li>
-                      <li><a class="dropdown-item" href="#">America</a></li>
-                      <li><a class="dropdown-item" href="#">Asia</a></li>
-                      <li><a class="dropdown-item" href="#">Europe</a></li>
-                      <li><a class="dropdown-item" href="#">Oceania</a></li>
+                    <ul class="dropdown-menu shadow-sm w-100 mt-lg-1 border-0 bg-white p-0" id="ul">
+                      <li class="p-1 bg-white themedBg"><a class="dropdown-item text-dark themedText" href="#">Africa</a></li>
+                      <li class="p-1 bg-white themedBg"><a class="dropdown-item text-dark themedText" href="#">America</a></li>
+                      <li class="p-1 bg-white themedBg"><a class="dropdown-item text-dark themedText" href="#">Asia</a></li>
+                      <li class="p-1 bg-white themedBg"><a class="dropdown-item text-dark themedText" href="#">Europe</a></li>
+                      <li class="p-1 bg-white themedBg"><a class="dropdown-item text-dark themedText" href="#">Oceania</a></li>
                     </ul>
                   </div>
             </div>
         </div>
         <div class="p-0 row justify-content-md-between justify-content-around mt-2 mt-lg-3 g-5">
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <!-- width: calc( 25% - 50px); min-width: 285px; height: 360px; -->
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/de.svg" class="w-100 h-100" alt="Germany" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/de.svg" class="w-100 h-100" alt="Germany" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Germany</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">81.770.900</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6 class="light">81.770.900</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Europe</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Europe</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Berlin</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Berlin</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/us.svg" class="w-100 h-100" alt="USA" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/us.svg" class="w-100 h-100" alt="USA" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">United States of America</h5>
                             <div class="card-text mb-3">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">323.947.000</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>323.947.000</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Americas</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Americas</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Washington,&nbspD.C.</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Washington,&nbspD.C.</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/br.svg" class="w-100 h-100" alt="Brazil" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/br.svg" class="w-100 h-100" alt="Brazil" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Brazil</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">206.135.893</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>206.135.893</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Americas</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Americas</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Brasilia</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Brasilia</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/is.svg" class="w-100 h-100" alt="Iceland" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/is.svg" class="w-100 h-100" alt="Iceland" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Iceland</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">334.300</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>334.300</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Europe</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Europe</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Reykjavik</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Reykjavik</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/af.svg" class="w-100 h-100" alt="Afghanistan" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/af.svg" class="w-100 h-100" alt="Afghanistan" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Afghanistan</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">27.657.145</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>27.657.145</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Asia</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Asia</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Kabul</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Kabul</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/ax.svg" class="w-100 h-100" alt="Åland Islands" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/ax.svg" class="w-100 h-100" alt="Åland Islands" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Åland Islands</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">28.875</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>28.875</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Europe</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Europe</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Mariehamn</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Mariehamn</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/al.svg" class="w-100 h-100" alt="Albania" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/al.svg" class="w-100 h-100" alt="Albania" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Albania</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">2.886.026</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>2.886.026</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Europe</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Europe</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Tirana</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Tirana</h6>
                                 </span>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-10 col-sm-7 col-md-5 col-lg-3">
-                <a href="details.html" class="btn btn-white p-0 m-0 text-start w-100" style="border-radius: 5px; height: 360px;">
-                    <div class="card shadow-sm w-100 h-100">
-                        <div class="w-100 h-50" style="border-radius: 5px 5px 0px 0px;">
-                            <img src="assets/flags/dz.svg" class="w-100 h-100" alt="Germany" style="object-fit: cover; border-radius: 5px 5px 0px 0px;">
+            <div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
+                <a href="details.html" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <div class="card shadow-sm w-100 h-100 bg-transparent">
+                        <div class="w-100 h-50" id="imgDiv">
+                            <img src="assets/flags/dz.svg" class="w-100 h-100" alt="Algeria" id="img">
                         </div>
-                        <div class="card-body px-4" style="border-radius: 0px 0px 5px 5px;">
+                        <div class="card-body px-4 bg-white themedBg" id="textDiv">
                             <h5 class="card-title mb-3 mt-2 fw-bold">Algeria</h5>
                             <div class="card-text">
                                 <span class="d-flex justify-content-start">
-                                    <h6>Population:&nbsp</h6>
-                                    <h6 class="fw-normal">40.400.000</h6>
+                                    <h6 class="semiBold">Population:&nbsp</h6>
+                                    <h6>40.400.000</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Region:&nbsp</h6>
-                                    <h6 class="fw-normal">Africa</h6>
+                                    <h6 class="semiBold">Region:&nbsp</h6>
+                                    <h6>Africa</h6>
                                 </span>
                                 <span class="d-flex justify-content-start">
-                                    <h6>Capital:&nbsp</h6>
-                                    <h6 class="fw-normal">Algiers</h6>
+                                    <h6 class="semiBold">Capital:&nbsp</h6>
+                                    <h6>Algiers</h6>
                                 </span>
                             </div>
                         </div>
@@ -257,6 +256,10 @@
         </div>
     </div>
 
+    <script src="toggleTheme.js"></script>
+    <script>
+        
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
