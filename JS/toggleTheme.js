@@ -1,22 +1,23 @@
 // 1 light, 0 dark
 var theme = 1;
+localStorage.setItem("theme", theme);
 
 function toggleTheme() {
-  console.log("before", theme);
-  if (theme) {
+  console.log("before", parseInt(localStorage.getItem('theme')));
+  if (parseInt(localStorage.getItem('theme'))) {
     //darken
     Darken();
 
     //clear theme
-    theme = 0;
+    localStorage.setItem("theme", 0);
   } else {
     //lighten
     lighten();
 
     //set theme
-    theme = 1;
+    localStorage.setItem("theme", 1);
   }
-  console.log("after", theme);
+  console.log("after", parseInt(localStorage.getItem('theme')));
 }
 
 function Darken() {
