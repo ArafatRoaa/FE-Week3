@@ -4,6 +4,10 @@ body {
     font-family: 'Nunito Sans', sans-serif !important;
 }
 
+.gray {
+    color: #d6d6d6;
+}
+
 .semiBold {
     font-weight: 600;
 }

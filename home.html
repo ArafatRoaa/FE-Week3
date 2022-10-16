@@ -12,11 +12,11 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body class="m-0 p-0 pb-5 bg-light" id="body" onload="getAllCountries()">
+<body class="m-0 p-0 pb-5 bg-light" id="body" onload="init()">
     <header
         class="container-fluid align-items-center py-4 px-sm-5 d-flex justify-content-between shadow-sm bg-white themedBg">
         <h1 class="fs-5 fw-bold p-0 m-0">Where in the world?</h1>
-        <button type="button" class="btn btn-xs text-nowrap p-0" onclick="toggleTheme()">
+        <button type="button" class="btn btn-xs text-nowrap p-0">
             <i class="bi bi-moon" id="icon"></i>
             <span class="fs-6 fw-normal text-end text-dark themedText">Dark Mode</span>
         </button>
@@ -27,7 +27,7 @@
                 <div class="d-flex position-relative shadow-sm mb-5 mb-lg-0 rounded-3 bg-white themedBg">
                     <i
                         class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary iconSearch"></i>
-                    <input id="search" type="text" onchange="searchCountries()"
+                    <input id="search" type="text"
                         class="form-control form-control-lg fs-6 border-0 py-3 px-5 bg-transparent text-dark themedText"
                         placeholder="Search for a country...">
                 </div>
@@ -39,23 +39,18 @@
                     </button>
                     <ul class="dropdown-menu shadow-sm w-100 mt-lg-1 border-0 bg-white p-0" id="ul">
                         <li class="p-1 bg-white themedBg">
-                            <button class="btn dropdown-item text-dark themedText"
-                            onclick="filterCountries('all')">No Filter</button></li>
+                            <button class="btn dropdown-item text-dark themedText">No Filter</button>
+                        </li>
                         <li class="p-1 bg-white themedBg"><button
-                                class="btn dropdown-item text-dark themedText"
-                                onclick="filterCountries('Africa')">Africa</button></li>
+                                class="btn dropdown-item text-dark themedText">Africa</button></li>
                         <li class="p-1 bg-white themedBg"><button
-                                class="btn dropdown-item text-dark themedText"
-                                onclick="filterCountries('Americas')">Americas</button></li>
+                                class="btn dropdown-item text-dark themedText">Americas</button></li>
                         <li class="p-1 bg-white themedBg"><button
-                                class="btn dropdown-item text-dark themedText"
-                                onclick="filterCountries('Asia')">Asia</button></li>
+                                class="btn dropdown-item text-dark themedText">Asia</button></li>
                         <li class="p-1 bg-white themedBg"><button
-                                class="btn dropdown-item text-dark themedText"
-                                onclick="filterCountries('Europe')">Europe</button></li>
+                                class="btn dropdown-item text-dark themedText">Europe</button></li>
                         <li class="p-1 bg-white themedBg"><button
-                                class="btn dropdown-item text-dark themedText"
-                                onclick="filterCountries('Oceania')">Oceania</button></li>
+                                class="btn dropdown-item text-dark themedText">Oceania</button></li>
                     </ul>
                 </div>
             </div>
@@ -65,10 +60,7 @@
         </div>
     </div>
 
-    <script src="JS/toggleTheme.js"></script>
-    <script src="JS/useAllCountries.js"></script>
-    <script src="JS/searchCountries.js"></script>
-    <script src="JS/filterCountries.js"></script>
+    <script src="JS/home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
