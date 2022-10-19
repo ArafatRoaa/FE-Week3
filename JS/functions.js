@@ -44,7 +44,7 @@ async function fetchCountries(whatToLoad = "") {
       .map(
         (country) =>
           `<div class="col-10 col-sm-7 col-md-5 col-lg-3 bg-transparent">
-                    <a href="details.html?cca2=${country.cca2}" class="btn p-0 m-0 text-start w-100" id="aCard">
+                    <a href="details.html?cca2=${country.cca2}" class="btn p-0 m-0 text-start w-100 aCard">
                         <div class="card shadow-sm w-100 h-100 bg-transparent">
                             <div class="w-100 h-50" id="imgDiv">
                                 <img src=${country.flags.svg} class="w-100 h-100" alt=${country.name.common} id="img">

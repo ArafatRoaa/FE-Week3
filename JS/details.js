@@ -5,12 +5,9 @@ async function init() {
 
   country = await fetchCountry(cca2);
   languages = getLanguages(country);
-  console.log(languages);
   name = getName(country);
   borders = getBorders(country);
-  console.log(borders);
   renderCountry(country, languages, name, borders);
-  console.log(country);
 }
 
 async function fetchCountry(code) {
@@ -31,7 +28,6 @@ function getLanguages(country){
     let languagesEntries = Object.entries(country.languages);
     languagesEntries.forEach(element => {
         languages.push(element[1]);
-        // console.log(element);
     });
     return languages;
 }
@@ -45,18 +41,17 @@ function getName(country){
 
 function getBorders(country){
     let countries = [];
-    let borders = Object.values(country.borders);
-    borders.forEach(async (border) => {
-        let country = await fetchCountry(border);
-        countries.push(country.name.common);
-        console.log(typeof countries, countries); 
-    })
-    console.log(typeof countries, countries); 
+    if(country.borders){
+        let borders = Object.values(country.borders);
+        borders.forEach(async (border) => {
+            let country = await fetchCountry(border);
+            countries.push(country.name.common);
+        })
+    } 
     return countries; 
 }
 
 function renderCountry(country, languages, name, borders) {
-    console.log(borders);
   document.getElementById("countryDetails")
   .innerHTML = 
     `<div class="col-lg-6 p-0 mb-5 mt-4 mt-sm-0" id="imgDetailsDiv">
@@ -104,7 +99,7 @@ function renderCountry(country, languages, name, borders) {
                     </span>
                 </div>
             </div>
-            <div class="d-flex flex-wrap m-0 mt-5 mt-lg-0 align-items-center mb-lg-0" id="bordersDiv">
+            <div class="d-flex flex-wrap m-0 mt-5 mt-lg-0 align-items-center mb-lg-0 d-block" id="bordersDiv">
                     <span class="fs-6 fw-bold">Border&nbspCountries:&nbsp</span>
                     <span class="fw-normal d-flex flex-wrap m-0 gap-2 bg-transparent" id="borders"> </span>
                 </div> 
@@ -121,9 +116,14 @@ function renderCountry(country, languages, name, borders) {
 
     document.getElementById("borders")
     .innerHTML = 
-        borders.map((border) => 
+        borders?.map((border) => 
             `<span class="shadow-sm py-1 px-2 bg-white themedBg">
                 <p class="text-center m-0 p-0">${border}</p>
             </span>`
         ).join("")
+
+    if(borders.length == 0){
+        let element = document.getElementById("bordersDiv");
+        element.classList.add("d-none");
+    }
 }

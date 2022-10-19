@@ -35,7 +35,7 @@
             <div class="col-7 col-lg-2 p-0 shadow-sm">
                 <div class="btn-group bg-white w-100 rounded-3 themedBg">
                     <button class="btn dropdown-toggle py-3 px-2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="fs-6 p-0 m-0 text-dark themedText">Filter by Region</span>
+                        <span class="fs-6 p-0 m-0 text-dark themedText">Filter by</span>
                     </button>
                     <ul class="dropdown-menu shadow-sm w-100 mt-lg-1 border-0 bg-white p-0" id="ul">
                         <li class="p-1 bg-white themedBg">
@@ -51,12 +51,26 @@
                                 class="btn dropdown-item text-dark themedText">Europe</button></li>
                         <li class="p-1 bg-white themedBg"><button
                                 class="btn dropdown-item text-dark themedText">Oceania</button></li>
+                        <li class="p-1 bg-white themedBg"><button
+                                class="btn dropdown-item text-dark themedText">Favourites</button></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="p-0 row justify-content-around justify-content-md-start mt-2 mt-lg-3 g-5" id="cards">
+        <div class="row mt-5 gx-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <div class="position-sticky p-3 d-flex flex-column gap-3 shadow-sm bg-white favouriteDiv" id="favourites">
+                    <span class="fs-4 fw-bold border-0"> Favourites </span>
+                    <div class="d-flex flex-column pt-1 border-0" style="overflow-y:auto; overflow-x: hidden;" id="favList">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="p-0 row justify-content-around justify-content-lg-start g-5" id="cards">
 
+                </div>
+            </div>
         </div>
     </div>
 

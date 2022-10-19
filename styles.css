@@ -4,15 +4,29 @@ body {
     font-family: 'Nunito Sans', sans-serif !important;
 }
 
+.radius5 {
+    border-radius: 5px;
+}
+
+.favouriteDiv{
+    height: 770px; 
+    top: 50px;  
+}
+
+.bgGray {
+    background-color: #d6d6d6;
+}
+
 .gray {
     color: #d6d6d6;
 }
 
 .semiBold {
+    color: black;
     font-weight: 600;
 }
 
-#aCard {
+.aCard {
     border-radius: 5px; 
     height: 360px;
 }
@@ -54,4 +68,10 @@ body {
 
 .icon {
     color: white;
+}
+
+/* Drag Styles */
+.dragOverBorder {
+    border: #27ae60;
+    border-width: 2px;
 }
