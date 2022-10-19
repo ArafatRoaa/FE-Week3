@@ -232,11 +232,3 @@ async function AddFetchCountry(favList, cca2){
     return country;
   }
 }
-
-function deleteCountry(code){
-  console.log(code);
-}
-
-function favMob(){
-  console.log(hi);
-}
