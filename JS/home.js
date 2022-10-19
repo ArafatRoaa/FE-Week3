@@ -103,6 +103,29 @@ async function init() {
     }
 }
 
+//favourites on Mob 
+for(const card of document.querySelectorAll(".theCard")){
+  let aTag = card.children[0];
+  let dTag = aTag.children[0];
+  let favBtn = dTag.children[2];
+  let icon = favBtn.children[0];
+  favBtn.onclick = async (e) => {
+    e.stopPropagation();
+    const cca2 = card.getAttribute("id"); 
+    console.log(cca2);
+    if(icon.classList.contains("gray")){
+      //fave
+      let country = await AddFetchCountry(favoriteCountries,cca2);
+      icon.classList.remove("gray");
+    }
+    else {
+      //delete
+      favoriteCountries = favoriteCountries.filter((element) => element.cca2 != cca2);
+      icon.classList.add("gray");
+    }
+  }
+}
+
 }
 
 //-----------------------------------   Functions   --------------------------------------------
@@ -182,10 +205,10 @@ function renderCards(countries) {
                             <h6>${country.capital}</h6>
                           </span>
                        </div>
-                       <button type="button" class="btn btn-xs p-0 pe-2 pb-2 position-absolute bottom-0 end-0" name="favoriteBtn">
-                            <i class="bi bi-star-fill gray d-lg-none" id="icon"></i>
-                        </button>
-                   </div>
+                  </div>
+                  <button type="button" class="btn btn-xs p-0 pe-2 pb-2 position-absolute bottom-0 end-0" name="favoriteBtn">
+                    <i class="bi bi-star-fill gray d-lg-none" id="icon"></i>
+                  </button>
                </div>
             </a>
           </div>`
